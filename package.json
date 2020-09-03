@@ -1,10 +1,10 @@
 {
-  "name": "y",
+  "name": "hongguang-axios",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/y.umd.js",
-  "module": "dist/y.es5.js",
+  "main": "dist/axios.umd.js",
+  "module": "dist/axios.es5.js",
   "typings": "dist/types/y.d.ts",
   "files": [
     "dist"
@@ -33,6 +33,7 @@
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
     "travis-deploy-once": "travis-deploy-once"
+    
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
