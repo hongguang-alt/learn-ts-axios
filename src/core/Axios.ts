@@ -23,11 +23,11 @@ interface PromiseChain<T> {
 
 export default class Axios {
   defaults: AxiosRequestConfig
-  Interceptors: Interceptors
+  interceptors: Interceptors
 
   constructor(initConfig: AxiosRequestConfig) {
     this.defaults = initConfig
-    this.Interceptors = {
+    this.interceptors = {
       request: new InterceptorManager<AxiosRequestConfig>(),
       response: new InterceptorManager<AxiosResponse>()
     }
@@ -50,11 +50,11 @@ export default class Axios {
       }
     ]
 
-    this.Interceptors.request.forEach(Interceptor => {
+    this.interceptors.request.forEach(Interceptor => {
       chain.unshift(Interceptor)
     })
 
-    this.Interceptors.response.forEach(Interceptor => {
+    this.interceptors.response.forEach(Interceptor => {
       chain.push(Interceptor)
     })
 
